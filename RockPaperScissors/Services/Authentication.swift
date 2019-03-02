@@ -29,4 +29,19 @@ class Authentication {
             }
         }
     }
+    
+    public func registerUser(email: String, password: String, completion: @escaping (_: User?, _: String?) -> ()) {
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+            
+            if let error = error {
+                print("Registration Error: " + error.localizedDescription)
+                return completion(nil, error.localizedDescription)
+            }
+            
+            if let user = authResult?.user {
+                return completion(user, nil)
+            }
+        }
+    }
 }

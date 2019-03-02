@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 import IHKeyboardAvoiding
 import NVActivityIndicatorView
 
@@ -24,14 +23,14 @@ class Login: UIViewController, NVActivityIndicatorViewable {
 
     @IBAction func loginButtonClicked(_ sender: Any) {
         
-        startAnimating(type: NVActivityIndicatorType.ballTrianglePath)
-        
         if let loginText = loginField.text, !loginText.isEmpty,
             let passText = passwordField.text, !passText.isEmpty {
             
-            Authentication.shared.loginUser(email: loginText, password: passText, completion:  { (userResult, error) in
+            startAnimating(type: NVActivityIndicatorType.ballTrianglePath)
+            
+            Authentication.shared.loginUser(email: loginText, password: passText, completion:  { (userResult, errorMessage) in
                 
-                if error != nil {
+                if errorMessage != nil {
                     self.stopAnimating()
                     // TODO: Show alert
                     return
@@ -40,8 +39,43 @@ class Login: UIViewController, NVActivityIndicatorViewable {
                 if let user = userResult {
                     PlayerProfile.shared.setId(id: user.uid)
                     // TODO: Query for player data using Id.
+                    self.stopAnimating()
+                    print("Login successful!")
                 }
             })
+        }
+        else {
+            print("Needs to fill in login/pass")
+            // TODO: Show Alert
+        }
+    }
+    @IBAction func registerButtonClicked(_ sender: Any) {
+        
+        if let loginText = loginField.text, !loginText.isEmpty,
+            let passText = passwordField.text, !passText.isEmpty {
+        
+            startAnimating(type: NVActivityIndicatorType.ballTrianglePath)
+            
+            Authentication.shared.registerUser(email: loginText, password: passText, completion: { (userResult, errorMessage) in
+                
+                if errorMessage != nil {
+                    self.stopAnimating()
+                    // TODO: Show alert
+                    return
+                }
+                
+                if let user = userResult {
+                    PlayerProfile.shared.setId(id: user.uid)
+                    PlayerProfile.shared.setPoints(points: 0)
+                    self.stopAnimating()
+                    print("Registration successful!")
+                    // TODO: How to set name?
+                }
+            })
+        }
+        else {
+            print("Needs to fill in login/pass")
+            // TODO: Show Alert
         }
     }
 }

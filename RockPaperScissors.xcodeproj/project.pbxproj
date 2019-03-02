@@ -16,6 +16,7 @@
 		C1436464222B1B7900884170 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1436463222B1B7900884170 /* GoogleService-Info.plist */; };
 		C143646A222B1FD600884170 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1436468222B1FD600884170 /* Login.swift */; };
 		C143646B222B1FD600884170 /* Login.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1436469222B1FD600884170 /* Login.xib */; };
+		C183AB03222B3A5C00DABCAF /* PlayerProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183AB02222B3A5C00DABCAF /* PlayerProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		C1436463222B1B7900884170 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C1436468222B1FD600884170 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		C1436469222B1FD600884170 /* Login.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Login.xib; sourceTree = "<group>"; };
+		C183AB02222B3A5C00DABCAF /* PlayerProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProfile.swift; sourceTree = "<group>"; };
 		DE3CB0DA11B6FD5279B7D038 /* Pods-RockPaperScissors.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RockPaperScissors.debug.xcconfig"; path = "Target Support Files/Pods-RockPaperScissors/Pods-RockPaperScissors.debug.xcconfig"; sourceTree = "<group>"; };
 		F750E23082497B2025A6A469 /* Pods-RockPaperScissors.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RockPaperScissors.release.xcconfig"; path = "Target Support Files/Pods-RockPaperScissors/Pods-RockPaperScissors.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +125,7 @@
 		C1436466222B1F9100884170 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C183AB02222B3A5C00DABCAF /* PlayerProfile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1436444222B1A9F00884170 /* AppDelegate.swift in Sources */,
+				C183AB03222B3A5C00DABCAF /* PlayerProfile.swift in Sources */,
 				C143646A222B1FD600884170 /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

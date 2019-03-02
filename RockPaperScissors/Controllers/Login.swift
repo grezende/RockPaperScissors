@@ -26,8 +26,22 @@ class Login: UIViewController, NVActivityIndicatorViewable {
         
         startAnimating(type: NVActivityIndicatorType.ballTrianglePath)
         
-//        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-//            // ...
-//        }
+        if let loginText = loginField.text, !loginText.isEmpty,
+            let passText = passwordField.text, !passText.isEmpty {
+            
+            Auth.auth().signIn(withEmail: loginText, password: passText) { (authResult, error) in
+                
+                if let error = error {
+                    print("Erro na autenticação: " + error.localizedDescription)
+                    self.stopAnimating()
+                    return
+                }
+                
+                if let user = authResult?.user {
+                    PlayerProfile.shared.setId(id: user.uid)
+                    // Query for player data using Id.
+                }
+            }
+        }
     }
 }

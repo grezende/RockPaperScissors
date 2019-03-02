@@ -17,6 +17,7 @@
 		C143646A222B1FD600884170 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1436468222B1FD600884170 /* Login.swift */; };
 		C143646B222B1FD600884170 /* Login.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1436469222B1FD600884170 /* Login.xib */; };
 		C183AB03222B3A5C00DABCAF /* PlayerProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183AB02222B3A5C00DABCAF /* PlayerProfile.swift */; };
+		C183AB07222B3FA300DABCAF /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183AB06222B3FA300DABCAF /* Authentication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		C1436468222B1FD600884170 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		C1436469222B1FD600884170 /* Login.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Login.xib; sourceTree = "<group>"; };
 		C183AB02222B3A5C00DABCAF /* PlayerProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProfile.swift; sourceTree = "<group>"; };
+		C183AB06222B3FA300DABCAF /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		DE3CB0DA11B6FD5279B7D038 /* Pods-RockPaperScissors.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RockPaperScissors.debug.xcconfig"; path = "Target Support Files/Pods-RockPaperScissors/Pods-RockPaperScissors.debug.xcconfig"; sourceTree = "<group>"; };
 		F750E23082497B2025A6A469 /* Pods-RockPaperScissors.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RockPaperScissors.release.xcconfig"; path = "Target Support Files/Pods-RockPaperScissors/Pods-RockPaperScissors.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +95,7 @@
 		C1436442222B1A9F00884170 /* RockPaperScissors */ = {
 			isa = PBXGroup;
 			children = (
+				C183AB05222B3F8800DABCAF /* Services */,
 				C1436467222B1F9600884170 /* Views */,
 				C1436466222B1F9100884170 /* Models */,
 				C1436465222B1F8900884170 /* Controllers */,
@@ -136,6 +139,14 @@
 				C1436469222B1FD600884170 /* Login.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C183AB05222B3F8800DABCAF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C183AB06222B3FA300DABCAF /* Authentication.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		DA07230FD67E436528A095C3 /* Frameworks */ = {
@@ -331,6 +342,7 @@
 				C1436444222B1A9F00884170 /* AppDelegate.swift in Sources */,
 				C183AB03222B3A5C00DABCAF /* PlayerProfile.swift in Sources */,
 				C143646A222B1FD600884170 /* Login.swift in Sources */,
+				C183AB07222B3FA300DABCAF /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

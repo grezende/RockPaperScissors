@@ -29,19 +29,19 @@ class Login: UIViewController, NVActivityIndicatorViewable {
         if let loginText = loginField.text, !loginText.isEmpty,
             let passText = passwordField.text, !passText.isEmpty {
             
-            Auth.auth().signIn(withEmail: loginText, password: passText) { (authResult, error) in
+            Authentication.shared.loginUser(email: loginText, password: passText, completion:  { (userResult, error) in
                 
-                if let error = error {
-                    print("Erro na autenticação: " + error.localizedDescription)
+                if error != nil {
                     self.stopAnimating()
+                    // TODO: Show alert
                     return
                 }
                 
-                if let user = authResult?.user {
+                if let user = userResult {
                     PlayerProfile.shared.setId(id: user.uid)
-                    // Query for player data using Id.
+                    // TODO: Query for player data using Id.
                 }
-            }
+            })
         }
     }
 }

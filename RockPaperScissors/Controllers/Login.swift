@@ -14,6 +14,7 @@ class Login: UIViewController, NVActivityIndicatorViewable {
 
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var usernameField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +53,8 @@ class Login: UIViewController, NVActivityIndicatorViewable {
     @IBAction func registerButtonClicked(_ sender: Any) {
         
         if let loginText = loginField.text, !loginText.isEmpty,
-            let passText = passwordField.text, !passText.isEmpty {
+            let passText = passwordField.text, !passText.isEmpty,
+            let usernameText = usernameField.text, !usernameText.isEmpty{
         
             startAnimating(type: NVActivityIndicatorType.ballTrianglePath)
             
@@ -67,14 +69,14 @@ class Login: UIViewController, NVActivityIndicatorViewable {
                 if let user = userResult {
                     PlayerProfile.shared.setId(id: user.uid)
                     PlayerProfile.shared.setPoints(points: 0)
+                    PlayerProfile.shared.setName(name: usernameText)
                     self.stopAnimating()
                     print("Registration successful!")
-                    // TODO: How to set name?
                 }
             })
         }
         else {
-            print("Needs to fill in login/pass")
+            print("Needs to fill in login/pass/username")
             // TODO: Show Alert
         }
     }

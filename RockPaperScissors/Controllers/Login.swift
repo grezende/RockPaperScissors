@@ -7,19 +7,27 @@
 //
 
 import UIKit
+import FirebaseAuth
+import IHKeyboardAvoiding
+import NVActivityIndicatorView
 
-class Login: UIViewController {
+class Login: UIViewController, NVActivityIndicatorViewable {
 
+    @IBOutlet weak var loginField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        KeyboardAvoiding.avoidingView = self.view
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func loginButtonClicked(_ sender: Any) {
+        
+        startAnimating(type: NVActivityIndicatorType.ballTrianglePath)
+        
+//        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+//            // ...
+//        }
     }
-
-
 }

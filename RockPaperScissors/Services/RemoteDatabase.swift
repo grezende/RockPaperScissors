@@ -38,4 +38,31 @@ class RemoteDatabase {
         }
     }
     
+    func getToptenScores (completion: @escaping (_: [String], _: [Int]) -> ()) {
+        
+        self.ref.child("players").queryOrdered(byChild: "points").queryLimited(toFirst: 10).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            
+            var topTenNamesArray: [String] = []
+            var toptenPointsArray: [Int] = []
+            
+            if snapshot.exists() {
+                
+                print(snapshot)
+                
+                for child in snapshot.children.allObjects as! [DataSnapshot] {
+                    
+                    let name = child.childSnapshot(forPath: "name").value as! String
+                    let points = child.childSnapshot(forPath: "points").value as! Int
+                    
+                    topTenNamesArray.append(name)
+                    toptenPointsArray.append(points)
+                }
+                
+                completion(topTenNamesArray, toptenPointsArray)
+                
+            } else {
+                print("Points query returned no results")
+            }
+        })
+    }
 }

@@ -28,6 +28,7 @@ class Home: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         RemoteDatabase.shared.getToptenScores(completion: { (names, points) in
             
+            // TODO: Reverse the arrays
             self.topNamesArray = names
             self.topPointsArray = points
             self.leaderboardTableView.reloadData()
@@ -48,6 +49,12 @@ class Home: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         if let namesArray = self.topNamesArray, indexPath.row < namesArray.count {
             cell.textLabel?.text = namesArray[indexPath.row]
+        }
+        
+        if let pointsArray = self.topPointsArray, indexPath.row < pointsArray.count {
+            let label = UILabel.init(frame: CGRect(x:0,y:0,width:100,height:20))
+            label.text = String(pointsArray[indexPath.row])
+            cell.accessoryView = label
         }
         
         return cell

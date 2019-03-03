@@ -13,6 +13,7 @@ class Home: UIViewController, UITableViewDelegate, UITableViewDataSource,
                 NVActivityIndicatorViewable {
 
     @IBOutlet weak var playerNameLabel: UILabel!
+    @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var leaderboardTableView: UITableView!
     
     var topNamesArray: [String]? = nil
@@ -27,6 +28,7 @@ class Home: UIViewController, UITableViewDelegate, UITableViewDataSource,
         self.leaderboardTableView.delegate = self
         
         playerNameLabel.text! = PlayerProfile.shared.getName()!
+        pointsLabel.text! = "Points: " + String(PlayerProfile.shared.getPoints()!)
         
         RemoteDatabase.shared.getToptenScores(completion: { (names, points) in
             
@@ -38,7 +40,23 @@ class Home: UIViewController, UITableViewDelegate, UITableViewDataSource,
         })
     }
     
-// TableView Functions
+    @IBAction func findGameButtonClicked(_ sender: Any) {
+        
+        self.startAnimating(type: NVActivityIndicatorType.ballTrianglePath)
+        RemoteDatabase.shared.getAvailableGame(completion: { (error, matchId) in
+            
+            if error != nil {
+                self.stopAnimating()
+                // TODO Show error alert
+                return
+            }
+            
+            self.stopAnimating()
+            print(matchId)
+            })
+    }
+    
+    // TableView Functions
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10

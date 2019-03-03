@@ -65,4 +65,42 @@ class RemoteDatabase {
             }
         })
     }
+    
+    func getAvailableGame (completion: @escaping (_: String?, _: String?) -> ()) {
+        
+        ref.child("matches").queryOrdered(byChild: "player2").queryEqual(toValue: "none").observeSingleEvent(of: .value, with: { (snapshot) in
+
+            if snapshot.exists() {
+                
+                let matchId = (snapshot.value as? NSDictionary)?.allKeys[0] as! String
+                let firstMatch = (snapshot.children.allObjects as! [DataSnapshot])[0]
+                
+                self.ref.child("matches").child(matchId).child("player1")
+                    .setValue(PlayerProfile.shared.getId())
+                
+                Match.shared.setId(id: matchId)
+                Match.shared.setPlayer1(player: firstMatch.childSnapshot(forPath: "player1")
+                    .value as! String)
+                Match.shared.setPlayer2(player: PlayerProfile.shared.getId()!)
+                
+                print(Match.shared.getPlayer1())
+                print(Match.shared.getId())
+                
+                completion(nil, matchId)
+            }
+            else {
+                let matchId = self.ref.child("matches").childByAutoId()
+                
+                let newMatch = [
+                    "player1": PlayerProfile.shared.getId()!,
+                    "player2": "none",
+                    "selectionPlayer1": "none",
+                    "selectionPlayer2": "none"
+                ]
+                
+                self.ref.child("matches").child(matchId.key!).setValue(newMatch)
+                completion(nil, matchId.key)
+            }
+        })
+    }
 }

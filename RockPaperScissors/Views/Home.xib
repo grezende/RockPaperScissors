@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="leaderboardTableView" destination="gnh-zb-Sp2" id="x5T-47-g9W"/>
                 <outlet property="playerNameLabel" destination="hhn-Xq-idK" id="Urn-ft-njR"/>
+                <outlet property="pointsLabel" destination="aEC-yd-dQl" id="jgp-3X-BxY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -44,7 +45,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEC-yd-dQl">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aEC-yd-dQl">
                     <rect key="frame" x="234" y="441" width="73" height="34"/>
                     <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="24"/>
                     <nil key="textColor"/>
@@ -56,19 +57,37 @@
                         <navigationItem title="Title" id="TxH-Vm-uDB"/>
                     </items>
                 </navigationBar>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mu-oI-FqF">
+                    <rect key="frame" x="111" y="530" width="152" height="41"/>
+                    <color key="backgroundColor" red="0.72336632013320923" green="0.61614320160027902" blue="0.38268275315510036" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="41" id="JTy-rH-WxM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="25"/>
+                    <state key="normal" title="Find Game">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="findGameButtonClicked:" destination="-1" eventType="touchUpInside" id="bBt-7B-Hv7"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.033961920389999997" green="0.70118178929999997" blue="0.24620805030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="8mu-oI-FqF" firstAttribute="trailing" secondItem="aky-4g-bY9" secondAttribute="trailing" id="4P1-2Q-Zzl"/>
                 <constraint firstItem="gnh-zb-Sp2" firstAttribute="top" secondItem="aky-4g-bY9" secondAttribute="bottom" constant="32" id="7sN-In-ZJs"/>
                 <constraint firstItem="aky-4g-bY9" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="9ai-0G-1gO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="dd0-bK-H0S" secondAttribute="top" constant="20" id="BII-E0-ADw"/>
                 <constraint firstItem="gnh-zb-Sp2" firstAttribute="trailing" secondItem="aEC-yd-dQl" secondAttribute="trailing" id="EMC-z2-25P"/>
                 <constraint firstItem="dd0-bK-H0S" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="J2A-uk-Tuo"/>
                 <constraint firstItem="dd0-bK-H0S" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JCo-kd-xu9"/>
+                <constraint firstItem="8mu-oI-FqF" firstAttribute="centerX" secondItem="gnh-zb-Sp2" secondAttribute="centerX" id="KNG-d1-1UB"/>
                 <constraint firstItem="hhn-Xq-idK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="46" id="Kdo-ok-pWW"/>
                 <constraint firstItem="dd0-bK-H0S" firstAttribute="centerX" secondItem="gnh-zb-Sp2" secondAttribute="centerX" id="OiQ-xB-Sx3"/>
                 <constraint firstItem="gnh-zb-Sp2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="67" id="hQ4-Ll-Lb2"/>
                 <constraint firstItem="hhn-Xq-idK" firstAttribute="top" secondItem="gnh-zb-Sp2" secondAttribute="bottom" constant="32" id="kII-0t-RoL"/>
+                <constraint firstItem="8mu-oI-FqF" firstAttribute="top" secondItem="hhn-Xq-idK" secondAttribute="bottom" constant="55" id="mWi-YL-X5o"/>
                 <constraint firstItem="aky-4g-bY9" firstAttribute="top" secondItem="dd0-bK-H0S" secondAttribute="bottom" constant="26" id="mxS-VZ-Yf5"/>
                 <constraint firstItem="aky-4g-bY9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="uGn-vd-vDY"/>
                 <constraint firstItem="aEC-yd-dQl" firstAttribute="top" secondItem="gnh-zb-Sp2" secondAttribute="bottom" constant="32" id="uYW-fh-ITj"/>

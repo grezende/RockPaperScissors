@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Home" customModule="RockPaperScissors" customModuleProvider="target">
+            <connections>
+                <outlet property="playerNameLabel" destination="hhn-Xq-idK" id="Urn-ft-njR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gnh-zb-Sp2">
+                    <rect key="frame" x="67" y="134" width="240" height="275"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="275" id="fHn-9p-0QR"/>
+                    </constraints>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Players" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aky-4g-bY9">
+                    <rect key="frame" x="113" y="70" width="150" height="32"/>
+                    <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="29"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhn-Xq-idK">
+                    <rect key="frame" x="46" y="441" width="85" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="85" id="Yey-s3-W04"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEC-yd-dQl">
+                    <rect key="frame" x="234" y="441" width="73" height="34"/>
+                    <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dd0-bK-H0S">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <items>
+                        <navigationItem title="Title" id="TxH-Vm-uDB"/>
+                    </items>
+                </navigationBar>
+            </subviews>
+            <color key="backgroundColor" red="0.033961920389999997" green="0.70118178929999997" blue="0.24620805030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="gnh-zb-Sp2" firstAttribute="top" secondItem="aky-4g-bY9" secondAttribute="bottom" constant="32" id="7sN-In-ZJs"/>
+                <constraint firstItem="aky-4g-bY9" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="9ai-0G-1gO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="dd0-bK-H0S" secondAttribute="top" constant="20" id="BII-E0-ADw"/>
+                <constraint firstItem="gnh-zb-Sp2" firstAttribute="trailing" secondItem="aEC-yd-dQl" secondAttribute="trailing" id="EMC-z2-25P"/>
+                <constraint firstItem="dd0-bK-H0S" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="J2A-uk-Tuo"/>
+                <constraint firstItem="dd0-bK-H0S" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JCo-kd-xu9"/>
+                <constraint firstItem="hhn-Xq-idK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="46" id="Kdo-ok-pWW"/>
+                <constraint firstItem="dd0-bK-H0S" firstAttribute="centerX" secondItem="gnh-zb-Sp2" secondAttribute="centerX" id="OiQ-xB-Sx3"/>
+                <constraint firstItem="gnh-zb-Sp2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="67" id="hQ4-Ll-Lb2"/>
+                <constraint firstItem="hhn-Xq-idK" firstAttribute="top" secondItem="gnh-zb-Sp2" secondAttribute="bottom" constant="32" id="kII-0t-RoL"/>
+                <constraint firstItem="aky-4g-bY9" firstAttribute="top" secondItem="dd0-bK-H0S" secondAttribute="bottom" constant="26" id="mxS-VZ-Yf5"/>
+                <constraint firstItem="aky-4g-bY9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="uGn-vd-vDY"/>
+                <constraint firstItem="aEC-yd-dQl" firstAttribute="top" secondItem="gnh-zb-Sp2" secondAttribute="bottom" constant="32" id="uYW-fh-ITj"/>
+                <constraint firstItem="gnh-zb-Sp2" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="vOd-Py-8Si"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="67.5"/>
+        </view>
+    </objects>
+</document>

@@ -69,6 +69,7 @@ PODS:
   - NVActivityIndicatorView (4.4.0):
     - NVActivityIndicatorView/Presenter (= 4.4.0)
   - NVActivityIndicatorView/Presenter (4.4.0)
+  - SCLAlertView (0.8)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -76,6 +77,7 @@ DEPENDENCIES:
   - Firebase/Database
   - IHKeyboardAvoiding
   - NVActivityIndicatorView
+  - SCLAlertView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -93,6 +95,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - NVActivityIndicatorView
+    - SCLAlertView
 
 SPEC CHECKSUMS:
   Firebase: 383fa29aca93e371cab776b48a5c66544d3c2003
@@ -109,7 +112,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NVActivityIndicatorView: ec7440a57af2450319d3a4181cca7da6fc127064
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
 
-PODFILE CHECKSUM: 163db13dcafc65922aaa91b5cf9b73b5a40275b7
+PODFILE CHECKSUM: b9ffdfe38a2f00cc9663da5dc71f3c63515b874e
 
 COCOAPODS: 1.6.1

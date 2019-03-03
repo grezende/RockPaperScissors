@@ -9,6 +9,7 @@
 import UIKit
 import IHKeyboardAvoiding
 import NVActivityIndicatorView
+import SCLAlertView
 
 class Login: UIViewController, NVActivityIndicatorViewable {
 
@@ -33,7 +34,7 @@ class Login: UIViewController, NVActivityIndicatorViewable {
                 
                 if errorMessage != nil {
                     self.stopAnimating()
-                    // TODO: Show alert
+                    self.showErrorAlert(errorMessage: errorMessage!)
                     return
                 }
                 
@@ -43,7 +44,7 @@ class Login: UIViewController, NVActivityIndicatorViewable {
                         
                         if error != nil {
                             self.stopAnimating()
-                            // TODO: Show alert
+                            self.showErrorAlert(errorMessage: error!)
                             return
                         }
                         
@@ -54,13 +55,15 @@ class Login: UIViewController, NVActivityIndicatorViewable {
                         print("Id recuperado: " + PlayerProfile.shared.getId()!)
                         print("Nome recuperado: " + PlayerProfile.shared.getName()!)
                         print("Pontos recuperados: " + String(describing: PlayerProfile.shared.getPoints()))
+                        self.goToHome()
+                        
                     })
                 }
             })
         }
         else {
             print("Needs to fill in login/pass")
-            // TODO: Show Alert
+            showErrorAlert(errorMessage: "Please fill in both fields")
         }
     }
     @IBAction func registerButtonClicked(_ sender: Any) {
@@ -75,7 +78,7 @@ class Login: UIViewController, NVActivityIndicatorViewable {
                 
                 if errorMessage != nil {
                     self.stopAnimating()
-                    // TODO: Show alert
+                    self.showErrorAlert(errorMessage: errorMessage!)
                     return
                 }
                 
@@ -86,12 +89,24 @@ class Login: UIViewController, NVActivityIndicatorViewable {
                     RemoteDatabase.shared.addNewUser(id: user.uid, name: usernameText)
                     self.stopAnimating()
                     print("Registration successful!")
+                    self.goToHome()
                 }
             })
         }
         else {
             print("Needs to fill in login/pass/username")
-            // TODO: Show Alert
+            showErrorAlert(errorMessage: "Please fill in all the fields")
         }
+    }
+    
+    private func goToHome() {
+        
+        let navigationController = UINavigationController()
+        navigationController.viewControllers = [Home()]
+        self.present(navigationController, animated: true, completion: nil)
+    }
+    
+    private func showErrorAlert (errorMessage: String) {
+        SCLAlertView().showError("Oops!", subTitle: errorMessage)
     }
 }

@@ -11,6 +11,7 @@ target 'RockPaperScissors' do
 	pod 'Firebase/Database'
 	pod 'IHKeyboardAvoiding'
 	pod 'NVActivityIndicatorView'
+	pod 'SCLAlertView'
 
   target 'RockPaperScissorsTests' do
     inherit! :search_paths

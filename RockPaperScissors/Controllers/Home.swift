@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
-class Home: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class Home: UIViewController, UITableViewDelegate, UITableViewDataSource,
+                NVActivityIndicatorViewable {
 
     @IBOutlet weak var playerNameLabel: UILabel!
     @IBOutlet weak var leaderboardTableView: UITableView!
@@ -19,7 +21,7 @@ class Home: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Loading
+        startAnimating(type: NVActivityIndicatorType.ballTrianglePath)
         
         self.leaderboardTableView.dataSource = self
         self.leaderboardTableView.delegate = self
@@ -28,12 +30,11 @@ class Home: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         RemoteDatabase.shared.getToptenScores(completion: { (names, points) in
             
-            // TODO: Reverse the arrays
-            self.topNamesArray = names
-            self.topPointsArray = points
+            self.topNamesArray = names.reversed()
+            self.topPointsArray = points.reversed()
             self.leaderboardTableView.reloadData()
             
-            // Remove Loading
+            self.stopAnimating()
         })
     }
     

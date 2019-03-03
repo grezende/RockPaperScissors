@@ -12,9 +12,9 @@ class PlayerProfile {
     
     static let shared = PlayerProfile()
     
-    var id: String?
-    var name: String?
-    var points: Int?
+    private var id: String?
+    private var name: String?
+    private var points: Int?
     
     private init() {}
     

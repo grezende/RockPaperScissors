@@ -18,6 +18,7 @@
 		C143646B222B1FD600884170 /* Login.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1436469222B1FD600884170 /* Login.xib */; };
 		C183AB03222B3A5C00DABCAF /* PlayerProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183AB02222B3A5C00DABCAF /* PlayerProfile.swift */; };
 		C183AB07222B3FA300DABCAF /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183AB06222B3FA300DABCAF /* Authentication.swift */; };
+		C183AB0D222B6DD100DABCAF /* RemoteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183AB0C222B6DD100DABCAF /* RemoteDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		C1436469222B1FD600884170 /* Login.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Login.xib; sourceTree = "<group>"; };
 		C183AB02222B3A5C00DABCAF /* PlayerProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProfile.swift; sourceTree = "<group>"; };
 		C183AB06222B3FA300DABCAF /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		C183AB0C222B6DD100DABCAF /* RemoteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDatabase.swift; sourceTree = "<group>"; };
 		DE3CB0DA11B6FD5279B7D038 /* Pods-RockPaperScissors.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RockPaperScissors.debug.xcconfig"; path = "Target Support Files/Pods-RockPaperScissors/Pods-RockPaperScissors.debug.xcconfig"; sourceTree = "<group>"; };
 		F750E23082497B2025A6A469 /* Pods-RockPaperScissors.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RockPaperScissors.release.xcconfig"; path = "Target Support Files/Pods-RockPaperScissors/Pods-RockPaperScissors.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				C183AB06222B3FA300DABCAF /* Authentication.swift */,
+				C183AB0C222B6DD100DABCAF /* RemoteDatabase.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IHKeyboardAvoiding/IHKeyboardAvoiding.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -289,6 +293,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IHKeyboardAvoiding.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,6 +348,7 @@
 				C183AB03222B3A5C00DABCAF /* PlayerProfile.swift in Sources */,
 				C143646A222B1FD600884170 /* Login.swift in Sources */,
 				C183AB07222B3FA300DABCAF /* Authentication.swift in Sources */,
+				C183AB0D222B6DD100DABCAF /* RemoteDatabase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,9 +39,22 @@ class Login: UIViewController, NVActivityIndicatorViewable {
                 
                 if let user = userResult {
                     PlayerProfile.shared.setId(id: user.uid)
-                    // TODO: Query for player data using Id.
-                    self.stopAnimating()
-                    print("Login successful!")
+                    RemoteDatabase.shared.getUserData(id: user.uid, completion: { (user, error) in
+                        
+                        if error != nil {
+                            self.stopAnimating()
+                            // TODO: Show alert
+                            return
+                        }
+                        
+                        PlayerProfile.shared.setName(name: (user!["name"] as? String)!)
+                        PlayerProfile.shared.setPoints(points: user!["points"] as! Int)
+                        self.stopAnimating()
+                        print("Login successful!")
+                        print("Id recuperado: " + PlayerProfile.shared.getId()!)
+                        print("Nome recuperado: " + PlayerProfile.shared.getName()!)
+                        print("Pontos recuperados: " + String(describing: PlayerProfile.shared.getPoints()))
+                    })
                 }
             })
         }
@@ -70,6 +83,7 @@ class Login: UIViewController, NVActivityIndicatorViewable {
                     PlayerProfile.shared.setId(id: user.uid)
                     PlayerProfile.shared.setPoints(points: 0)
                     PlayerProfile.shared.setName(name: usernameText)
+                    RemoteDatabase.shared.addNewUser(id: user.uid, name: usernameText)
                     self.stopAnimating()
                     print("Registration successful!")
                 }

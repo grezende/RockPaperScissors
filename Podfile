@@ -8,6 +8,7 @@ target 'RockPaperScissors' do
   # Pods for RockPaperScissors
 	pod 'Firebase/Core'
 	pod 'Firebase/Auth'
+	pod 'Firebase/Database'
 	pod 'IHKeyboardAvoiding'
 	pod 'NVActivityIndicatorView'
 

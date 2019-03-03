@@ -22,6 +22,8 @@
 		C183AB14222B770300DABCAF /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183AB12222B770300DABCAF /* Home.swift */; };
 		C183AB15222B770300DABCAF /* Home.xib in Resources */ = {isa = PBXBuildFile; fileRef = C183AB13222B770300DABCAF /* Home.xib */; };
 		C1BE467F222C74A0002B919E /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE467E222C74A0002B919E /* Match.swift */; };
+		C1BE4682222C853C002B919E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE4680222C853C002B919E /* Game.swift */; };
+		C1BE4683222C853C002B919E /* Game.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1BE4681222C853C002B919E /* Game.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		C183AB12222B770300DABCAF /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		C183AB13222B770300DABCAF /* Home.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Home.xib; sourceTree = "<group>"; };
 		C1BE467E222C74A0002B919E /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		C1BE4680222C853C002B919E /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		C1BE4681222C853C002B919E /* Game.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Game.xib; sourceTree = "<group>"; };
 		DE3CB0DA11B6FD5279B7D038 /* Pods-RockPaperScissors.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RockPaperScissors.debug.xcconfig"; path = "Target Support Files/Pods-RockPaperScissors/Pods-RockPaperScissors.debug.xcconfig"; sourceTree = "<group>"; };
 		F750E23082497B2025A6A469 /* Pods-RockPaperScissors.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RockPaperScissors.release.xcconfig"; path = "Target Support Files/Pods-RockPaperScissors/Pods-RockPaperScissors.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +134,7 @@
 			children = (
 				C1436468222B1FD600884170 /* Login.swift */,
 				C183AB12222B770300DABCAF /* Home.swift */,
+				C1BE4680222C853C002B919E /* Game.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 			children = (
 				C1436469222B1FD600884170 /* Login.xib */,
 				C183AB13222B770300DABCAF /* Home.xib */,
+				C1BE4681222C853C002B919E /* Game.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C143644E222B1AA000884170 /* LaunchScreen.storyboard in Resources */,
+				C1BE4683222C853C002B919E /* Game.xib in Resources */,
 				C183AB15222B770300DABCAF /* Home.xib in Resources */,
 				C1436464222B1B7900884170 /* GoogleService-Info.plist in Resources */,
 				C143644B222B1AA000884170 /* Assets.xcassets in Resources */,
@@ -363,6 +370,7 @@
 				C183AB14222B770300DABCAF /* Home.swift in Sources */,
 				C183AB0D222B6DD100DABCAF /* RemoteDatabase.swift in Sources */,
 				C1BE467F222C74A0002B919E /* Match.swift in Sources */,
+				C1BE4682222C853C002B919E /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

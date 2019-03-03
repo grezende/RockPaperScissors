@@ -75,16 +75,13 @@ class RemoteDatabase {
                 let matchId = (snapshot.value as? NSDictionary)?.allKeys[0] as! String
                 let firstMatch = (snapshot.children.allObjects as! [DataSnapshot])[0]
                 
-                self.ref.child("matches").child(matchId).child("player1")
+                self.ref.child("matches").child(matchId).child("player2")
                     .setValue(PlayerProfile.shared.getId())
                 
                 Match.shared.setId(id: matchId)
                 Match.shared.setPlayer1(player: firstMatch.childSnapshot(forPath: "player1")
                     .value as! String)
                 Match.shared.setPlayer2(player: PlayerProfile.shared.getId()!)
-                
-                print(Match.shared.getPlayer1())
-                print(Match.shared.getId())
                 
                 completion(nil, matchId)
             }
@@ -99,7 +96,9 @@ class RemoteDatabase {
                 ]
                 
                 self.ref.child("matches").child(matchId.key!).setValue(newMatch)
-                completion(nil, matchId.key)
+                
+                // TODO: Observe and wait for second player
+//                completion(nil, matchId.key)
             }
         })
     }

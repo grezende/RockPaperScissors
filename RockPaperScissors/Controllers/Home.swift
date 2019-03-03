@@ -52,7 +52,7 @@ class Home: UIViewController, UITableViewDelegate, UITableViewDataSource,
             }
             
             self.stopAnimating()
-            print(matchId)
+            self.navigationController?.pushViewController(Game(), animated: true)
             })
     }
     

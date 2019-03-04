@@ -21,13 +21,19 @@ class Home: UIViewController, UITableViewDelegate, UITableViewDataSource,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        startAnimating(type: NVActivityIndicatorType.ballTrianglePath)
         
         self.leaderboardTableView.dataSource = self
         self.leaderboardTableView.delegate = self
         
         playerNameLabel.text! = PlayerProfile.shared.getName()!
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        startAnimating(type: NVActivityIndicatorType.ballTrianglePath)
+        
         pointsLabel.text! = "Points: " + String(PlayerProfile.shared.getPoints()!)
         
         RemoteDatabase.shared.getToptenScores(completion: { (names, points) in

@@ -140,4 +140,9 @@ class RemoteDatabase {
         ref.child("matches").child(matchId).child(isPlayer1 ?
             "selectionPlayer1" : "selectionPlayer2").setValue(selection)
     }
+    
+    func increasePlayerScore (playerId: String, points: Int) {
+        
+        ref.child("players").child(playerId).child("points").setValue(points)
+    }
 }

@@ -79,9 +79,9 @@ class RemoteDatabase {
                     .setValue(PlayerProfile.shared.getId())
                 
                 Match.shared.setId(id: matchId)
-                Match.shared.setPlayer1(player: firstMatch.childSnapshot(forPath: "player1")
+                Match.shared.setOpponent(player: firstMatch.childSnapshot(forPath: "player1")
                     .value as! String)
-                Match.shared.setPlayer2(player: PlayerProfile.shared.getId()!)
+                Match.shared.setPlayer(player: PlayerProfile.shared.getId()!)
                 
                 completion(nil, matchId)
             }

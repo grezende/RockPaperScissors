@@ -13,10 +13,10 @@ class Match {
     static let shared = Match()
     
     private var id: String?
-    private var player1: String?
-    private var player2: String?
-    private var selectionPlayer1: String?
-    private var selectionPlayer2: String?
+    private var player: String?
+    private var opponent: String?
+    private var selectionPlayer: String?
+    private var selectionOpponent: String?
     
     private init() {}
     
@@ -24,40 +24,40 @@ class Match {
         self.id = id
     }
     
-    func setPlayer1 (player: String) {
-        self.player1 = player
+    func setPlayer (player: String) {
+        self.player = player
     }
     
-    func setPlayer2 (player: String) {
-        self.player2 = player
+    func setOpponent (player: String) {
+        self.opponent = player
     }
     
     func setSelectionPlayer1 (selection: String) {
-        self.selectionPlayer1 = selection
+        self.selectionPlayer = selection
     }
     
-    func setSelectionPlayer2 (selection: String) {
-        self.selectionPlayer2 = selection
+    func setSelectionOpponent (selection: String) {
+        self.selectionOpponent = selection
     }
     
     func getId () -> String? {
         return self.id
     }
     
-    func getPlayer1 () -> String? {
-        return self.player1
+    func getPlayer () -> String? {
+        return self.player
     }
     
-    func getPlayer2 () -> String? {
-        return self.player2
+    func getOpponent () -> String? {
+        return self.opponent
     }
     
-    func getSelectionPlayer1 () -> String? {
-        return self.selectionPlayer1
+    func getSelectionPlayer () -> String? {
+        return self.selectionPlayer
     }
     
-    func getSelectionPlayer2 () -> String? {
-        return self.selectionPlayer2
+    func getSelectionOpponent () -> String? {
+        return self.selectionOpponent
     }
     
     

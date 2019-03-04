@@ -15,6 +15,7 @@ class Game: UIViewController, NVActivityIndicatorViewable {
     @IBOutlet weak var player1NameLabel: UILabel!
     @IBOutlet weak var player2NameLabel: UILabel!
     
+    @IBOutlet weak var waitingLabel: UILabel!
     @IBOutlet weak var rockButton: UIButton!
     @IBOutlet weak var paperButton: UIButton!
     @IBOutlet weak var scissorsButton: UIButton!
@@ -127,6 +128,7 @@ class Game: UIViewController, NVActivityIndicatorViewable {
         rockButton.isEnabled = false
         paperButton.isEnabled = false
         scissorsButton.isEnabled = false
+        waitingLabel.isHidden = false
         RemoteDatabase.shared.setPlayerSelection(isPlayer1: Match.shared.getIsPlayer1()!, matchId: Match.shared.getId()!, selection: "rock")
         Match.shared.setSelectionPlayer1(selection: "rock")
     }
@@ -136,6 +138,7 @@ class Game: UIViewController, NVActivityIndicatorViewable {
         rockButton.isEnabled = false
         paperButton.isEnabled = false
         scissorsButton.isEnabled = false
+        waitingLabel.isHidden = false
         RemoteDatabase.shared.setPlayerSelection(isPlayer1: Match.shared.getIsPlayer1()!, matchId: Match.shared.getId()!, selection: "paper")
         Match.shared.setSelectionPlayer1(selection: "paper")
     }
@@ -145,6 +148,7 @@ class Game: UIViewController, NVActivityIndicatorViewable {
         rockButton.isEnabled = false
         paperButton.isEnabled = false
         scissorsButton.isEnabled = false
+        waitingLabel.isHidden = false
         RemoteDatabase.shared.setPlayerSelection(isPlayer1: Match.shared.getIsPlayer1()!, matchId: Match.shared.getId()!, selection: "scissors")
         Match.shared.setSelectionPlayer1(selection: "scissors")
     }

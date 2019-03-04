@@ -22,6 +22,8 @@ class Home: UIViewController, UITableViewDelegate, UITableViewDataSource,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "Home"
+        
         self.leaderboardTableView.dataSource = self
         self.leaderboardTableView.delegate = self
         

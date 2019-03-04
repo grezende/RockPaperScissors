@@ -21,6 +21,8 @@ class Game: UIViewController, NVActivityIndicatorViewable {
     @IBOutlet weak var scissorsButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "Match"
 
         startAnimating(type: NVActivityIndicatorType.ballTrianglePath)
         

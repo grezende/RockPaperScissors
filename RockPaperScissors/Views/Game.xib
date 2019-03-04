@@ -12,8 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Game" customModule="RockPaperScissors" customModuleProvider="target">
             <connections>
+                <outlet property="paperButton" destination="1Qc-xN-fCK" id="M9g-QU-kas"/>
                 <outlet property="player1NameLabel" destination="VcF-yf-5Yp" id="10B-Mp-fPR"/>
                 <outlet property="player2NameLabel" destination="t6F-Cv-WoV" id="fCs-bB-BGT"/>
+                <outlet property="rockButton" destination="tUy-JN-XTx" id="hyw-gz-DWd"/>
+                <outlet property="scissorsButton" destination="hFu-qa-4EG" id="pI0-yl-54M"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,6 +33,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="player1Rock" image="rock"/>
+                    <connections>
+                        <action selector="rockButtonClicked:" destination="-1" eventType="touchUpInside" id="hlJ-bH-rcV"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhg-rn-feb">
                     <rect key="frame" x="255" y="80" width="88" height="88"/>
@@ -38,10 +44,16 @@
                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Qc-xN-fCK">
                     <rect key="frame" x="143" y="640" width="88" height="88"/>
                     <state key="normal" title="player1Paper" image="paper"/>
+                    <connections>
+                        <action selector="paperButtonClicked:" destination="-1" eventType="touchUpInside" id="RTm-Ng-XhZ"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFu-qa-4EG">
                     <rect key="frame" x="255" y="640" width="88" height="88"/>
                     <state key="normal" title="player1Scissors" image="scissors"/>
+                    <connections>
+                        <action selector="scissorsButtonClicked:" destination="-1" eventType="touchUpInside" id="LUf-hf-7Cj"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zC-yW-BcJ">
                     <rect key="frame" x="30" y="80" width="88" height="88"/>

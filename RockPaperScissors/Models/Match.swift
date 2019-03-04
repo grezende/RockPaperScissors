@@ -17,6 +17,7 @@ class Match {
     private var opponent: String?
     private var selectionPlayer: String?
     private var selectionOpponent: String?
+    private var isPlayer1: Bool?
     
     private init() {}
     
@@ -40,6 +41,10 @@ class Match {
         self.selectionOpponent = selection
     }
     
+    func setIsPlayer1 (isPlayer1: Bool) {
+        self.isPlayer1 = isPlayer1
+    }
+    
     func getId () -> String? {
         return self.id
     }
@@ -60,5 +65,7 @@ class Match {
         return self.selectionOpponent
     }
     
-    
+    func getIsPlayer1 () -> Bool? {
+        return self.isPlayer1
+    }
 }

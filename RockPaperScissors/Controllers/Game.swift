@@ -14,6 +14,9 @@ class Game: UIViewController, NVActivityIndicatorViewable {
     @IBOutlet weak var player1NameLabel: UILabel!
     @IBOutlet weak var player2NameLabel: UILabel!
     
+    @IBOutlet weak var rockButton: UIButton!
+    @IBOutlet weak var paperButton: UIButton!
+    @IBOutlet weak var scissorsButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,11 +30,34 @@ class Game: UIViewController, NVActivityIndicatorViewable {
             
             self.stopAnimating()
             
-            RemoteDatabase.shared.getMatchSelections(opponentId: Match.shared.getOpponent()!, completion: { (opponentSelection) in
+            RemoteDatabase.shared.getMatchSelections(isPlayer1: Match.shared.getIsPlayer1()!, completion: { (opponentSelection) in
                 
                 print(opponentSelection)
             })
         }
     }
-
+    
+    @IBAction func rockButtonClicked(_ sender: Any) {
+        
+        rockButton.isEnabled = false
+        paperButton.isEnabled = false
+        scissorsButton.isEnabled = false
+        RemoteDatabase.shared.setPlayerSelection(isPlayer1: Match.shared.getIsPlayer1()!, matchId: Match.shared.getId()!, selection: "rock")
+    }
+    
+    @IBAction func paperButtonClicked(_ sender: Any) {
+        
+        rockButton.isEnabled = false
+        paperButton.isEnabled = false
+        scissorsButton.isEnabled = false
+        RemoteDatabase.shared.setPlayerSelection(isPlayer1: Match.shared.getIsPlayer1()!, matchId: Match.shared.getId()!, selection: "paper")
+    }
+    
+    @IBAction func scissorsButtonClicked(_ sender: Any) {
+        
+        rockButton.isEnabled = false
+        paperButton.isEnabled = false
+        scissorsButton.isEnabled = false
+        RemoteDatabase.shared.setPlayerSelection(isPlayer1: Match.shared.getIsPlayer1()!, matchId: Match.shared.getId()!, selection: "scissors")
+    }
 }

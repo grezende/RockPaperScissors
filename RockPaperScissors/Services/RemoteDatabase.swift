@@ -82,6 +82,7 @@ class RemoteDatabase {
                 Match.shared.setOpponent(player: firstMatch.childSnapshot(forPath: "player1")
                     .value as! String)
                 Match.shared.setPlayer(player: PlayerProfile.shared.getId()!)
+                Match.shared.setIsPlayer1(isPlayer1: false)
                 
                 completion(nil, matchId)
             }
@@ -97,13 +98,25 @@ class RemoteDatabase {
                 
                 self.ref.child("matches").child(matchId.key!).setValue(newMatch)
                 
-                // TODO: Observe and wait for second player
-//                completion(nil, matchId.key)
+                Match.shared.setId(id: matchId.key!)
+                Match.shared.setPlayer(player: PlayerProfile.shared.getId()!)
+                Match.shared.setIsPlayer1(isPlayer1: true)
+                
+                self.ref.child("matches").child(matchId.key!).child("player2")
+                    .observe(DataEventType.value, with: { (snapshot) in
+                
+                        let opponent = snapshot.value as? String
+                        
+                        if opponent != "none" {
+                            Match.shared.setOpponent(player: opponent!)
+                            completion(nil, matchId.key)
+                        }
+                })
             }
         })
     }
     
-    func getMatchSelections (opponentId: String, completion: @escaping (_: String) -> ()) {
+    func getMatchSelections (isPlayer1: Bool, completion: @escaping (_: String) -> ()) {
         
         ref.child("matches").child(Match.shared.getId()!).observe(DataEventType.value, with: { (snapshot) in
             
@@ -112,7 +125,7 @@ class RemoteDatabase {
             if matchData!["selectionPlayer1"] as? String != "none" &&
                 matchData!["selectionPlayer2"] as? String != "none" {
                 
-                if opponentId == matchData!["player1"] as? String {
+                if !isPlayer1 {
                     completion((matchData!["selectionPlayer1"] as? String)!)
                 }
                 else {
@@ -120,5 +133,11 @@ class RemoteDatabase {
                 }
             }
         })
+    }
+    
+    func setPlayerSelection (isPlayer1: Bool, matchId: String, selection: String) {
+        
+        ref.child("matches").child(matchId).child(isPlayer1 ?
+            "selectionPlayer1" : "selectionPlayer2").setValue(selection)
     }
 }

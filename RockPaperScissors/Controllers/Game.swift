@@ -23,12 +23,15 @@ class Game: UIViewController, NVActivityIndicatorViewable {
             
             self.player2NameLabel.text = user!["name"] as? String
             
+            self.player1NameLabel.text = PlayerProfile.shared.getName()
+            
             self.stopAnimating()
+            
+            RemoteDatabase.shared.getMatchSelections(opponentId: Match.shared.getOpponent()!, completion: { (opponentSelection) in
+                
+                print(opponentSelection)
+            })
         }
-        
-        
-        
-        player1NameLabel.text = PlayerProfile.shared.getName()
     }
 
 }

@@ -102,4 +102,23 @@ class RemoteDatabase {
             }
         })
     }
+    
+    func getMatchSelections (opponentId: String, completion: @escaping (_: String) -> ()) {
+        
+        ref.child("matches").child(Match.shared.getId()!).observe(DataEventType.value, with: { (snapshot) in
+            
+            let matchData = snapshot.value as? NSDictionary
+            
+            if matchData!["selectionPlayer1"] as? String != "none" &&
+                matchData!["selectionPlayer2"] as? String != "none" {
+                
+                if opponentId == matchData!["player1"] as? String {
+                    completion((matchData!["selectionPlayer1"] as? String)!)
+                }
+                else {
+                    completion((matchData!["selectionPlayer2"] as? String)!)
+                }
+            }
+        })
+    }
 }

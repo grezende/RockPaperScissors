@@ -84,6 +84,8 @@ class Home: UIViewController, UITableViewDelegate, UITableViewDataSource,
             cell.accessoryView = label
         }
         
+        cell.backgroundColor = UIColor.brown
+        
         return cell
     }
 }
